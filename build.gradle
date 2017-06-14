@@ -1,0 +1,29 @@
+// running 'gradle cleanEclipse eclipse' will add dependencies into eclipse
+project(':ProjectA') {
+	// you can declare dependencies here or in their own
+	// build.gradle file
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+ 
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+    	testCompile 'junit:junit:4.11'
+	}
+}
+
+project(':ProjectB') {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+ 
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+    	compile project(':ProjectA')
+    	compile group: 'joda-time', name: 'joda-time', version: '2.1'
+	}
+}
