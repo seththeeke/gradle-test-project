@@ -5,3 +5,6 @@
 .gradle/*
 
 *.prefs
+
+ProjectA/build/*
+ProjectB/build/*
